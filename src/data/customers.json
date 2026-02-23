@@ -1,0 +1,177 @@
+[
+    {
+      "id": "C001",
+      "name": "Ella Mäkelä",
+      "email": "ella.makela@example.com",
+      "joinedAt": "2025-02-08",
+      "vip": false
+    },
+    {
+      "id": "C002",
+      "name": "Sofia Tuominen",
+      "email": "sofia.tuominen@example.com",
+      "joinedAt": "2024-04-06",
+      "vip": false
+    },
+    {
+      "id": "C003",
+      "name": "Elias Lehto",
+      "email": "elias.lehto@example.com",
+      "joinedAt": "2024-08-07",
+      "vip": true
+    },
+    {
+      "id": "C004",
+      "name": "Matias Hämäläinen",
+      "email": "matias.hamalainen@example.com",
+      "joinedAt": "2024-01-14",
+      "vip": false
+    },
+    {
+      "id": "C005",
+      "name": "Veera Laine",
+      "email": "veera.laine@example.com",
+      "joinedAt": "2024-06-18",
+      "vip": false
+    },
+    {
+      "id": "C006",
+      "name": "Leo Heikkinen",
+      "email": "",
+      "joinedAt": "2025-10-07",
+      "vip": false
+    },
+    {
+      "id": "C007",
+      "name": "Onni Saarinen",
+      "email": "onni.saarinen@example.com",
+      "joinedAt": "2025-03-26",
+      "vip": true
+    },
+    {
+      "id": "C008",
+      "name": "Aino Lehtonen",
+      "email": "aino.lehtonen@example.com",
+      "joinedAt": "2024-04-05",
+      "vip": false
+    },
+    {
+      "id": "C009",
+      "name": "Noel Rantanen",
+      "email": "noel.rantanen@example.com",
+      "joinedAt": "2024-01-22",
+      "vip": false
+    },
+    {
+      "id": "C010",
+      "name": "Hilla Saarinen",
+      "email": "hilla.saarinen@example.com",
+      "joinedAt": "2024-12-17",
+      "vip": false
+    },
+    {
+      "id": "C011",
+      "name": "Aada Korhonen",
+      "email": "aada.korhonen@example.com",
+      "joinedAt": "2025-10-10",
+      "vip": false
+    },
+    {
+      "id": "C012",
+      "name": "Joonas Aaltonen",
+      "email": "joonas.aaltonen@example.com",
+      "joinedAt": "2024-07-03",
+      "vip": false
+    },
+    {
+      "id": "C013",
+      "name": "Sofia Karjalainen",
+      "email": "not-an-email",
+      "joinedAt": "2024-03-02",
+      "vip": false
+    },
+    {
+      "id": "C014",
+      "name": "Iida Salmi",
+      "email": "iida.salmi@example.com",
+      "joinedAt": "2024-01-10",
+      "vip": true
+    },
+    {
+      "id": "C015",
+      "name": "Alma Salmi",
+      "email": "alma.salmi@example.com",
+      "joinedAt": "2025-12-23",
+      "vip": false
+    },
+    {
+      "id": "C016",
+      "name": "Olivia Salmi",
+      "email": "olivia.salmi@example.com",
+      "joinedAt": "2025-08-12",
+      "vip": false
+    },
+    {
+      "id": "C017",
+      "name": "Mikael Lehtonen",
+      "email": "mikael.lehtonen@example.com",
+      "joinedAt": "2025-10-14",
+      "vip": false
+    },
+    {
+      "id": "C018",
+      "name": "Tuomas Mäkelä",
+      "email": "tuomas.makela@example.com",
+      "joinedAt": "2024-11-04",
+      "vip": false
+    },
+    {
+      "id": "C019",
+      "name": "Nea Mäkelä",
+      "email": "nea.makela@example.com",
+      "joinedAt": "2025-05-03",
+      "vip": false
+    },
+    {
+      "id": "C020",
+      "name": "Emma Rantanen",
+      "email": "emma.rantanen@example.com",
+      "joinedAt": "2024-09-30",
+      "vip": true
+    },
+    {
+      "id": "C021",
+      "name": "Saara Lehtinen",
+      "email": "saara.lehtinen@example.com",
+      "joinedAt": "2024-12-06",
+      "vip": false
+    },
+    {
+      "id": "C022",
+      "name": "Eetu Koskinen",
+      "email": "eetu.koskinen@example.com",
+      "joinedAt": "2024-02-17",
+      "vip": false
+    },
+    {
+      "id": "C023",
+      "name": "Julius Koskinen",
+      "email": "julius.koskinen@example.com",
+      "joinedAt": "2025-05-04",
+      "vip": false
+    },
+    {
+      "id": "C024",
+      "name": "Arttu Salo",
+      "email": "arttu.salo@example.com",
+      "joinedAt": "2024-11-10",
+      "vip": false
+    },
+    {
+      "id": "C025",
+      "name": "Oskari Koskinen",
+      "email": "oskari.koskinen@example.com",
+      "joinedAt": "2024-07-24",
+      "vip": false
+    }
+  ]

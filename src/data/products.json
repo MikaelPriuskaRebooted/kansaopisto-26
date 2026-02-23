@@ -1,0 +1,226 @@
+[
+    {
+      "id": "P001",
+      "name": "Coffee Beans 500g",
+      "category": "Beverages",
+      "price": 8.63,
+      "stock": 3
+    },
+    {
+      "id": "P002",
+      "name": "Black Tea 50 bags",
+      "category": "Beverages",
+      "price": 9.86,
+      "stock": 31
+    },
+    {
+      "id": "P003",
+      "name": "Green Tea 50 bags",
+      "category": "Beverages",
+      "price": 3.59,
+      "stock": 13
+    },
+    {
+      "id": "P004",
+      "name": "Oat Milk 1L",
+      "category": "Dairy",
+      "price": 9.08,
+      "stock": 69
+    },
+    {
+      "id": "P005",
+      "name": "Whole Milk 1L",
+      "category": "Dairy",
+      "price": 1.94,
+      "stock": 54
+    },
+    {
+      "id": "P006",
+      "name": "Greek Yogurt 400g",
+      "category": "Dairy",
+      "price": 8.98,
+      "stock": 11
+    },
+    {
+      "id": "P007",
+      "name": "Butter 250g",
+      "category": "Dairy",
+      "price": 6.0,
+      "stock": 64
+    },
+    {
+      "id": "P008",
+      "name": "Cheddar Cheese 300g",
+      "category": "Dairy",
+      "price": 1.25,
+      "stock": 71
+    },
+    {
+      "id": "P009",
+      "name": "Sourdough Bread",
+      "category": "Bakery",
+      "price": 3.54,
+      "stock": 57
+    },
+    {
+      "id": "P010",
+      "name": "Rye Bread",
+      "category": "Bakery",
+      "price": 10.73,
+      "stock": 0
+    },
+    {
+      "id": "P011",
+      "name": "Bagels 4-pack",
+      "category": "Bakery",
+      "price": 10.12,
+      "stock": 43
+    },
+    {
+      "id": "P012",
+      "name": "Croissant 2-pack",
+      "category": "Bakery",
+      "price": 4.18,
+      "stock": 27
+    },
+    {
+      "id": "P013",
+      "name": "Apples 1kg",
+      "category": "Produce",
+      "price": 4.77,
+      "stock": 13
+    },
+    {
+      "id": "P014",
+      "name": "Bananas 1kg",
+      "category": "Produce",
+      "price": 6.57,
+      "stock": 48
+    },
+    {
+      "id": "P015",
+      "name": "Oranges 1kg",
+      "category": "Produce",
+      "price": 10.86,
+      "stock": 5
+    },
+    {
+      "id": "P016",
+      "name": "Tomatoes 500g",
+      "category": "Produce",
+      "price": 1.94,
+      "stock": 58
+    },
+    {
+      "id": "P017",
+      "name": "Cucumbers 2-pack",
+      "category": "Produce",
+      "price": 2.21,
+      "stock": 68
+    },
+    {
+      "id": "P018",
+      "name": "Carrots 1kg",
+      "category": "Produce",
+      "price": 2.18,
+      "stock": 32
+    },
+    {
+      "id": "P019",
+      "name": "Potatoes 2kg",
+      "category": "Produce",
+      "price": 4.11,
+      "stock": 11
+    },
+    {
+      "id": "P020",
+      "name": "Olive Oil 500ml",
+      "category": "Pantry",
+      "price": 11.89,
+      "stock": 69
+    },
+    {
+      "id": "P021",
+      "name": "Pasta 500g",
+      "category": "Pantry",
+      "price": 10.76,
+      "stock": 24
+    },
+    {
+      "id": "P022",
+      "name": "Rice 1kg",
+      "category": "Pantry",
+      "price": 6.76,
+      "stock": 32
+    },
+    {
+      "id": "P023",
+      "name": "Canned Tomatoes",
+      "category": "Pantry",
+      "price": 6.83,
+      "stock": 58
+    },
+    {
+      "id": "P024",
+      "name": "Kidney Beans 400g",
+      "category": "Pantry",
+      "price": 8.14,
+      "stock": 45
+    },
+    {
+      "id": "P025",
+      "name": "Tuna Can",
+      "category": "Pantry",
+      "price": 6.31,
+      "stock": 52
+    },
+    {
+      "id": "P026",
+      "name": "Peanut Butter",
+      "category": "Pantry",
+      "price": 11.71,
+      "stock": 2
+    },
+    {
+      "id": "P027",
+      "name": "Chocolate Bar",
+      "category": "Snacks",
+      "price": 4.46,
+      "stock": 47
+    },
+    {
+      "id": "P028",
+      "name": "Potato Chips",
+      "category": "Snacks",
+      "price": 7.02,
+      "stock": 8
+    },
+    {
+      "id": "P029",
+      "name": "Frozen Pizza",
+      "category": "Frozen",
+      "price": 5.71,
+      "stock": 46
+    },
+    {
+      "id": "P030",
+      "name": "Ice Cream 1L",
+      "category": "Frozen",
+      "price": 11.44,
+      "stock": 7
+    },
+    {
+      "id": "P031",
+      "name": "Dish Soap",
+      "category": "Household",
+      "price": 8.08,
+      "stock": 31
+    },
+    {
+      "id": "P032",
+      "name": "Laundry Detergent",
+      "category": "Household",
+      "price": 10.3,
+      "stock": 51
+    }
+  ]
