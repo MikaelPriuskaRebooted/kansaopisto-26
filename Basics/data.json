@@ -1,0 +1,20 @@
+[
+    {
+        "sku": "A100",
+        "name": "Notebook",
+        "price": 10,
+        "quantity": 12
+    },
+    {
+        "sku": "B200",
+        "name": "Pen",
+        "price": 1,
+        "quantity": 2
+    },
+    {
+        "sku": "C300",
+        "name": "Pencil",
+        "price": 0.5,
+        "quantity": 0
+    }
+]
