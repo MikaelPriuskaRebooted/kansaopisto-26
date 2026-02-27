@@ -1,19 +1,4 @@
 
-function loadProducts() {}
-
-function loadCustomers() {}
-
-function loadOrders() {}
-
-
-function validateProduct(product) {}
-
-function validateCustomer(customer) {}
-
-function validateOrder(order) {}
-
-
-
 function calculateSalesSummary(orders, products, timeframe) {}
 
 function calculateRevenue(orders, products) {}
