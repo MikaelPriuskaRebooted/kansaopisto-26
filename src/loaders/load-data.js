@@ -1,4 +1,5 @@
 import { loadJSONFile } from "./load-json-file.js";
+import { validateProduct, validateCustomer, validateOrder } from "../validators/validators.js";
 
 
 function toUrl(pathFromHere) {

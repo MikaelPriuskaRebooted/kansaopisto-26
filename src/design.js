@@ -1,9 +1,8 @@
 
-function calculateSalesSummary(orders, products, timeframe) {}
 
-function calculateRevenue(orders, products) {}
 
-function calculateOrderCounts(orders) {}
+
+
 
 
 function getTopSellingProducts(orders, products, timeframe) {}

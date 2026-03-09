@@ -1,6 +1,6 @@
-import { hasKey, isObject, isString, isNumber, isInteger } from "./guard-utilities.js";
+import { hasKey, isObject, isString, isNumber, isInteger, isBoolean } from "./guard-utilities.js";
 
-function validateProduct(product) {
+export function validateProduct(product) {
 
     const errors = [];
 
@@ -52,7 +52,7 @@ function validateProduct(product) {
     return { ok: isValid, errors };
 }
 
-function validateCustomer(customer) {
+export function validateCustomer(customer) {
     const errors = [];
 
     // Checking if the object keys exist
@@ -103,7 +103,7 @@ function validateCustomer(customer) {
     return { ok: isValid, errors };
 }
 
-function validateOrder(order) {
+export function validateOrder(order) {
     const errors = [];
 
     // Checking if the object keys exist
@@ -143,7 +143,7 @@ function validateOrder(order) {
         errors.push("Order status must be a valid order status");
     }
 
-    if (!isArray(order.items)) {
+    if (!Array.isArray(order.items)) {
         errors.push("Order items must be an array");
     }
 
