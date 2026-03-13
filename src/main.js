@@ -1,5 +1,6 @@
 import { loadProducts, loadCustomers, loadOrders } from "./loaders/load-data.js";
 import { calculateSalesSummary } from "./calculations/revenue.js";
+import { calculateTopSellingProducts } from "./calculations/top-selling-products.js";
 
 async function run() {
     const orders = await loadOrders();
@@ -22,11 +23,28 @@ async function run() {
     console.log(allErrors.join("\n"));
 
     const timeframe = {
-        startDate: "2026-01-01T00:00:00",
+        startDate: "2026-01-01",
         endDate: "2026-01-31",
     }
     const salesSummary = calculateSalesSummary(orders.data, products.data, timeframe);
-    console.log(salesSummary);
-}
+
+    console.log(`\nSales Summary for ${timeframe.startDate} - ${timeframe.endDate}:`);
+    console.log(`Total revenue: ${salesSummary.revenue.toFixed(2)} €`);
+    console.log("Orders statistics:\n")
+    console.log(`Total orders: ${salesSummary.orderCounts.total}`);
+    console.log(`Paid orders: ${salesSummary.orderCounts.paid}`);
+    console.log(`Pending orders: ${salesSummary.orderCounts.pending}`);
+    console.log(`Cancelled orders: ${salesSummary.orderCounts.cancelled}`);
+    console.log(`Other orders: ${salesSummary.orderCounts.other}`);
+
+    const category = "Produce";
+
+    const topFiveProducts = calculateTopSellingProducts(orders.data, products.data, timeframe, category);
+
+    console.log("\nTop 5 Selling Products:");
+    for (const product of topFiveProducts) {
+        console.log(`${product.productId} ${product.name} ${category ? "" : `(${category})`} - ${product.quantity} sold, ${product.totalRevenue.toFixed(2)} € revenue`)
+    }
+} 
 
 run();

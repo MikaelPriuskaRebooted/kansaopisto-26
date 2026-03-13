@@ -1,3 +1,5 @@
+import { filterOrdersByTimeframe } from "./order-utilities.js";
+
 export function calculateSalesSummary(orders, products, timeframe) {
     const filteredOrders = filterOrdersByTimeframe(orders, timeframe)
 
@@ -11,24 +13,6 @@ export function calculateSalesSummary(orders, products, timeframe) {
 }
 
 
-function filterOrdersByTimeframe(orders, timeframe) {
-    return orders.filter((order) => isDateBetween(order.createdAt, timeframe))
-}
-
-
-function isDateBetween(date, timeframe) {
-    const startDateNormalized = `${timeframe.startDate}T00:00:00`;
-    const endDateNormalized = `${timeframe.endDate}T23:59:59`;
-
-    if (date >= startDateNormalized && date <= endDateNormalized) {
-        return true;
-    }
-
-    return false;
-}
-
-
-
 function calculateRevenue(orders, products) {
    const paidOrders = orders.filter((order) => order.status === "paid")
 
@@ -39,9 +23,11 @@ function calculateRevenue(orders, products) {
 
             const foundProduct = products.find((product) => product.id === item.productId)
 
-            const result = item.qty * foundProduct.price
+            if (foundProduct) {
+                const result = item.qty * foundProduct.price
 
-            totalRevenue = totalRevenue + result;
+                totalRevenue = totalRevenue + result;
+            }
         }
    }
 

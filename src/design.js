@@ -3,15 +3,6 @@
 
 
 
-
-
-function getTopSellingProducts(orders, products, timeframe) {}
-
-function orderTopSellingProducts(topSellingProducts) {}
-
-function getTopSellingProductsByCategory(orders, products, timeframe, category) {} // Depends on customer needs
-
-
 function getUserPurchasesByTimeframe(orders, customers, timeframe) {}
 
 function getUserPurchases(orders, customers) {}
