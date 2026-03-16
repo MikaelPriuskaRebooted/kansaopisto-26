@@ -13,3 +13,8 @@ export function isDateBetween(date, timeframe) {
 
     return false;
 }
+
+export function getPaidOrders(orders) {
+    return orders.filter((order) => order.status === "paid");
+}
+

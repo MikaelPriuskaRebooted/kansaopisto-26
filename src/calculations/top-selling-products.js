@@ -1,4 +1,6 @@
-import { filterOrdersByTimeframe } from "./order-utilities.js";
+import { filterOrdersByTimeframe, getPaidOrders } from "./order-utilities.js";
+import { buildProductLookup, getProductSales } from "./product-utilities.js";
+
 
 export function calculateTopSellingProducts(orders, products, timeframe, category) {
     const paidOrders = getPaidOrders(orders);
@@ -7,45 +9,13 @@ export function calculateTopSellingProducts(orders, products, timeframe, categor
     const filteredProducts = filterProductsByCategory(products, category);
     const productLookup = buildProductLookup(filteredProducts);
 
-    const salesByProductId = {};
+    const productSales = getProductSales(filteredOrders, productLookup);
 
-    for (const order of filteredOrders) {
-        for (const item of order.items) {
-            const product = productLookup[item.productId]
 
-            if (product) {
-                if (!salesByProductId[product.id]) {
-                    salesByProductId[product.id] = {
-                        name: product.name,
-                        productId: product.id,
-                        category: product.category,
-                        quantity: 0,
-                        totalRevenue: 0,
-                    }
-                }
-
-                salesByProductId[product.id].quantity += item.qty;
-                salesByProductId[product.id].totalRevenue += (item.qty * product.price)
-            }
-        }
-    }
-
-    return Object.values(salesByProductId).sort((a, b) => b.totalRevenue - a.totalRevenue).slice(0, 5);
+    return [...productSales].sort((a, b) => b.totalRevenue - a.totalRevenue).slice(0, 5);
 }
 
-function buildProductLookup(products) {
-    const productLookup = {};
 
-    for (const product of products) {
-        productLookup[product.id] = product;
-    }
-
-    return productLookup;
-}
-
-function getPaidOrders(orders) {
-    return orders.filter((order) => order.status === "paid");
-}
 
 function filterProductsByCategory(products, category) {
     if(!category) {
