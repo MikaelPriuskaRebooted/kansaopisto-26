@@ -8,7 +8,7 @@ export function buildProductLookup(products) {
     return productLookup;
 }
 
-export function getProductSales(orders, productLookup) {
+export function getProductSales(orders, productLookup, includeKeys) {
     const salesByProductId = {};
 
     for (const order of orders) {
@@ -30,6 +30,10 @@ export function getProductSales(orders, productLookup) {
                 salesByProductId[product.id].totalRevenue += (item.qty * product.price)
             }
         }
+    }
+
+    if (includeKeys) {
+        return salesByProductId;
     }
 
     return Object.values(salesByProductId)
