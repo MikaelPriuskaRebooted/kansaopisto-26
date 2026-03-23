@@ -47,6 +47,14 @@ export function validateProduct(product) {
     }
 
 
+    if (product.stock < 0) {
+        errors.push("Product stock must be positive number");
+    }
+
+    if (product.price < 0) {
+        errors.push("Product price must be positive number");
+    }
+
     const isValid = errors.length === 0;
 
     return { ok: isValid, errors };
@@ -97,6 +105,9 @@ export function validateCustomer(customer) {
         errors.push("Customer vip must be a boolean");
     }
 
+    if (!customer.email.includes("@")) {
+        errors.push("Customer email must include @ mark")
+    }
 
     const isValid = errors.length === 0;
 
@@ -148,7 +159,7 @@ export function validateOrder(order) {
     }
 
     if (Array.isArray(order.items)) {
-        order.items.forEach((item) => {
+        order.items.forEach((item, index) => {
             const validationResult = validateOrderItem(item);
             if (!validationResult.ok) {
                 errors.push(`Order item at index ${index} is not valid: ${validationResult.errors.join(", ")}`);
@@ -182,6 +193,10 @@ function validateOrderItem(item) {
 
     if (!isNumber(item.qty)) {
         errors.push("Order item qty must be a number");
+    }
+
+    if (item.qty <= 0) {
+        errors.push("Order item qty must be a positive number");
     }
 
     const isValid = errors.length === 0;

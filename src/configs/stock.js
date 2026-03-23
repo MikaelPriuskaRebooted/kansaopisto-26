@@ -1,5 +1,5 @@
 export const STOCK_THRESHOLDS = {
-    monthsToAverage: 3,
+    monthsToAverage: 1,
     stockCoverageMonths: 1,
     minimumStock: 3,
     tiers: {

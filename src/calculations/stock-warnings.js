@@ -1,5 +1,5 @@
 import { getPaidOrders, filterOrdersByTimeframe } from "./order-utilities.js";
-import { buildProductLookup, getProductSales } from "./product-utilities.js";
+import { buildProductLookup, getProductSales, filterProductsByCategory } from "./product-utilities.js";
 
 
 function calculateAverageMonthlySales(soldQuantity, stockConfig) {
@@ -25,6 +25,13 @@ function getWarningLevel(currentStock, recommendedStock, stockConfig) {
         return critical.priority
     }
 
+    const lowThreshold = Math.ceil(recommendedStock * low.threshold)
+
+    if (currentStock <= lowThreshold) {
+        return low.priority
+    }
+
+    return null
 }
 
 function calculateRecommendedStock(averageMonthlySales, stockConfig) {
@@ -34,17 +41,23 @@ function calculateRecommendedStock(averageMonthlySales, stockConfig) {
 }
 
 
-function calculateEstimatedDaysLeft(averageMonthlySales) {
-    return averageMonthlySales / 30
+function calculateEstimatedDaysLeft(averageMonthlySales, currentStock) {
+    const needForOneDay = averageMonthlySales / 30
+
+    if (needForOneDay === 0) {
+        return 0
+    } 
+
+    return Math.ceil(currentStock / needForOneDay)
 }
 
 
 function buildProductWarning(product, soldQuantity, stockConfig) {
     const { price: price_, ...restOfProduct } = product
     const currentStock = product.stock;
-    const warningLevel = getWarningLevel(currentStock, soldQuantity, stockConfig);
     const averageMonthlySales = calculateAverageMonthlySales(soldQuantity, stockConfig)
     const recommendedStock = calculateRecommendedStock(averageMonthlySales, stockConfig)
+    const warningLevel = getWarningLevel(currentStock, recommendedStock, stockConfig);
 
     if (!warningLevel) {
         return null
@@ -59,17 +72,19 @@ function buildProductWarning(product, soldQuantity, stockConfig) {
         averageMonthlySales: averageMonthlySales,
         recommendedStock: recommendedStock,
         reorderAmount: reorderAmount,
-        estimatedDaysLeft: calculateEstimatedDaysLeft(averageMonthlySales),
+        estimatedDaysLeft: calculateEstimatedDaysLeft(averageMonthlySales, currentStock),
         warningLevel: warningLevel
     }
-
 }
 
 function sortWarningsByPriority(warnings) {
-
-
-
-}
+  return [...warnings].sort((a, b) =>{
+    if (b.warningLevel !== a.warningLevel) {
+       return b.warningLevel - a.warningLevel
+    }
+    return b.reorderAmount - a.reorderAmount
+    }
+)}
 
 function getLookbackTimeframe(timeframe, stockConfig) {
     const lookbackMonths = stockConfig.monthsToAverage;
@@ -105,9 +120,10 @@ function formatDate(date) {
 
 
 
-function getLowStockWarnings(products, orders, timeframe, stockConfig, category) {
+export function getLowStockWarnings(props) {
+    const { products, orders, timeframe, stockConfig, category } = props
 
-    const lookbackTimeframe = getLookbackTimeframe()
+    const lookbackTimeframe = getLookbackTimeframe(timeframe, stockConfig)
 
     const paidOrders = getPaidOrders(orders);
     const filteredOrders = filterOrdersByTimeframe(paidOrders, lookbackTimeframe);

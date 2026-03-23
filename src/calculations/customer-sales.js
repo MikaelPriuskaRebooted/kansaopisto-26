@@ -1,5 +1,6 @@
 import { filterOrdersByTimeframe } from "./order-utilities.js";
 import { getPaidOrders } from "./order-utilities.js";
+import { buildProductLookup, getProductSales } from "./product-utilities.js"
 
 export function getUserPurchasesByTimeframe(customerId, orders, customers, products, timeframe, vipConfig) {
     const filteredOrders = filterOrdersByTimeframe(orders, timeframe);
@@ -95,14 +96,6 @@ function getTopProducts (purchases, threshold) {
 
     return sortedPurchases.slice(0, threshold);
 }
-
-const temp = [{
-    name: product.name,
-    productId: product.id,
-    category: product.category,
-    quantity: 2,
-    totalRevenue: 100,
-}]
 
 function calculateTotalSpending(productSales) {
     let totalSpending = 0;

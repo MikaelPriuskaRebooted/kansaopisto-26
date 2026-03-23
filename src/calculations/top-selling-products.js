@@ -1,5 +1,5 @@
 import { filterOrdersByTimeframe, getPaidOrders } from "./order-utilities.js";
-import { buildProductLookup, getProductSales } from "./product-utilities.js";
+import { buildProductLookup, getProductSales, filterProductsByCategory  } from "./product-utilities.js";
 
 
 export function calculateTopSellingProducts(orders, products, timeframe, category) {
@@ -17,10 +17,3 @@ export function calculateTopSellingProducts(orders, products, timeframe, categor
 
 
 
-function filterProductsByCategory(products, category) {
-    if(!category) {
-        return products;
-    }
-
-    return products.filter((product) => product.category === category);
-}

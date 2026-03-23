@@ -38,3 +38,11 @@ export function getProductSales(orders, productLookup, includeKeys) {
 
     return Object.values(salesByProductId)
 }
+
+export function filterProductsByCategory(products, category) {
+    if(!category) {
+        return products;
+    }
+
+    return products.filter((product) => product.category === category);
+}
