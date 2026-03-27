@@ -14,6 +14,10 @@ export function isNumber(value) {
     return typeof value === "number" && Number.isFinite(value)
 }
 
+export function isPositiveNumber(value) {
+    return isNumber(value) && value >= 0
+}
+
 export function isBoolean(value) {
     return typeof value === "boolean"
 }
