@@ -66,7 +66,7 @@ function getVipRecommendation (vipConfig, summary) {
     if (totalSpending >= spendingThreshold) {
         rulesPassed++;
     } else {
-        reasons.push(`You have spent ${totalSpending}€, but the threshold is ${spendingThreshold}€`);
+        reasons.push(`You have spent ${totalSpending.toFixed(2)} €, but the threshold is ${spendingThreshold.toFixed(2)} €`);
     }
 
     if (totalPaidOrders >= orderCountThreshold) {

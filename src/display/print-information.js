@@ -32,7 +32,7 @@ export function printSalesSummary(salesSummary, timeframe) {
 export function printTopSellingProducts(topProducts, category) {
     console.log("\nTop 5 Selling Products:");
     for (const product of topProducts) {
-        console.log(`${product.productId} ${product.name} ${category ? "" : `(${category})`} - ${product.quantity} sold, ${product.totalRevenue.toFixed(2)} € revenue`)
+        console.log(`${product.productId} ${product.name} ${category === null ? "" : `(${category})`} - ${product.quantity} sold, ${product.totalRevenue.toFixed(2)} € revenue`)
     }
 }
 
@@ -55,7 +55,7 @@ export function printUserPurchases(customerPurchases) {
         console.log(`Customer ID: ${customerId}`);
         console.log(`Email: ${email}`);
         console.log(`VIP: ${vip}`);
-        console.log(`Total Spending: ${totalSpending}`);
+        console.log(`Total Spending: ${totalSpending.toFixed(2)} €`);
         console.log(`Total Paid Orders: ${totalPaidOrders}`);
         console.log(`Unique Product Count: ${uniqueProductCount}`);
         console.log(`VIP Recommendation: ${vipRecommendation.label}`);

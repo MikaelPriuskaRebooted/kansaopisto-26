@@ -25,3 +25,27 @@ export function isBoolean(value) {
 export function isInteger(value) {
     return Number.isInteger(value)
 }
+
+export function isNull(value) {
+    return typeof value === "object" && value === null
+}
+
+export function isDefinedSting(value) {
+    return isString(value) && value.length > 0
+}
+
+export function isValidDateString(value) {
+    if (!isString(value)) {
+        return false
+    }
+
+    if (value.length !== 10) {
+        return false
+    }
+
+    if (value[4] !== "-" || value[7] !== "-") {
+        return false
+    }
+
+    return true
+}

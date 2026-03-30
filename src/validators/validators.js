@@ -1,4 +1,5 @@
-import { hasKey, isObject, isString, isNumber, isInteger, isBoolean } from "./guard-utilities.js";
+import { hasKey, isString, isNumber, isInteger, isBoolean, isValidDateString, isPositiveNumber, isNull, isDefinedSting } from "./guard-utilities.js";
+
 
 export function validateProduct(product) {
 
@@ -206,4 +207,33 @@ function validateOrderItem(item) {
 
 function isOrderStatus(status) {
     return status === "pending" || status === "paid"
+}
+
+export function validateArgs(args, error) {
+    const validReports = ["all", "sales", "top-products", "customer", "stock"]
+
+    if (!validReports.includes(args.report)) {
+        error.push(`Invalid report: ${args.report}`)
+    }
+
+    if (!isPositiveNumber(args.showErrorsLength)) {
+        error.push(`Invalid show errors length: ${args.showErrorsLength}`)
+    }
+
+    if (!isString(args.customerId) || args.customerId.length < 4) {
+        error.push(`Invalid customer ID: ${args.customerId}`)
+    }
+
+
+    if (!isNull(args.category) && !isDefinedSting(args.category)) {
+        error.push(`Invalid category: ${args.category}`)
+    }
+
+    if (!isValidDateString(args.startDate)) {
+        error.push(`Invalid start date: ${args.startDate}`)
+    }
+
+    if (!isValidDateString(args.endDate)) {
+        error.push(`Invalid end date: ${args.endDate}`)
+    }
 }
