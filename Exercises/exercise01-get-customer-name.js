@@ -7,7 +7,7 @@ const customer = {
 
 // Return the customer's name as a string.
 function getCustomerName(customer) {
-
+  return customer.name
 }
 
 console.log(getCustomerName(customer));
