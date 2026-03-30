@@ -49,7 +49,7 @@ export function getUserPurchases(customerId, orders, customers, products, vipCon
 
 function getVipRecommendation (vipConfig, summary) {
     const { spendingThreshold, orderCountThreshold, uniqueProductsThreshold } = vipConfig;
-    const { totalSpending, totalPaidOrders, topProducts, uniqueProductCount } = summary;
+    const { totalSpending, totalPaidOrders, uniqueProductCount } = summary;
 
     if (summary.vip) {
         return {
